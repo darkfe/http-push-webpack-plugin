@@ -61,7 +61,7 @@ HttpPushWebpackPlugin.prototype.upload = function (compilation, cb) {
         // var content = fs.readFileSync(item.existsAt, 'utf8');
         var subpath = path.basename(filename);
         upload(opt.receiver, {
-            token: opt.token,
+            token: opt.token || '',
             to: opt.to + '/' + filename
         }, item.existsAt, subpath, function (err, res) {
             if (err) {
