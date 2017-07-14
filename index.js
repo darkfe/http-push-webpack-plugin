@@ -48,7 +48,7 @@ function HttpPushWebpackPlugin(options) {
 HttpPushWebpackPlugin.prototype.apply = function (compiler) {
     var me = this;
     if (compiler) {
-        compiler.plugin('after-emit', function(data, cb) {
+        compiler.plugin('after-emit', function (data, cb) {
             me.upload(data, cb);
         });
     }
@@ -68,7 +68,7 @@ HttpPushWebpackPlugin.prototype.upload = function (compilation, cb) {
                 log.error(filename + ' - ' + chalk.red('[error] [' + err + ']'));
             }
             else {
-                log.info(filename +  chalk.green(' [DONE]'));
+                log.info(filename + chalk.green(' [DONE]'));
             }
         })
     });
